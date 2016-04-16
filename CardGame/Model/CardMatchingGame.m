@@ -26,7 +26,7 @@
 {
     _currentChosenCards = [[NSMutableArray alloc] init];
     for(Card *card in self.cards)
-        if(card.isChosen)
+        if(card.isChosen && !card.isMatched)
             [_currentChosenCards addObject:card];
     
     return _currentChosenCards;

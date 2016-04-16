@@ -131,6 +131,7 @@
 		170E31571C8D64ED002C6E7B /* CardGame */ = {
 			isa = PBXGroup;
 			children = (
+				170E31611C8D64ED002C6E7B /* Main.storyboard */,
 				170E315E1C8D64ED002C6E7B /* ViewController.h */,
 				170E315F1C8D64ED002C6E7B /* ViewController.m */,
 				1793B75A1CADA14B0093E939 /* SetCardGameViewController.h */,
@@ -139,7 +140,6 @@
 				1793B7551CAC95E10093E939 /* PlayingCardGameViewController.m */,
 				1776657B1CB9984F007DBB80 /* StatusHistoryViewController.h */,
 				1776657C1CB9984F007DBB80 /* StatusHistoryViewController.m */,
-				170E31611C8D64ED002C6E7B /* Main.storyboard */,
 				170E319D1C9512FA002C6E7B /* Model */,
 				170E31641C8D64ED002C6E7B /* Assets.xcassets */,
 				170E31581C8D64ED002C6E7B /* Supporting Files */,

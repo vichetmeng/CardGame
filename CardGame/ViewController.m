@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CardMatchingGame.h"
+#import "StatusHistoryViewController.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
@@ -59,13 +60,13 @@
     }
     self.statusLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.statusLabel.numberOfLines = 0;
-    [self.statusLabel setAttributedText: [self statusForGame:self.touchedCard
+    [self.statusLabel setAttributedText: [self statusForCard:self.touchedCard
                                           currentChosenCards:self.game.currentChosenCards
                                            currentMatchScore:self.game.matchScore]];
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)self.game.score];
 }
 
-- (NSAttributedString *)statusForGame:(Card *)touchedCard
+- (NSAttributedString *)statusForCard:(Card *)touchedCard
                    currentChosenCards:(NSArray *)currentChosenCards
                     currentMatchScore:(NSInteger)currentMatchScore
 {
@@ -145,7 +146,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    if ([segue.identifier isEqualToString:@"PlayingCardHistory"] || [segue.identifier isEqualToString:@"SetCardHistory"])
+    {
+        if ([segue.destinationViewController isKindOfClass:[StatusHistoryViewController class]])
+        {
+            StatusHistoryViewController *playingCardHistoryViewController = (StatusHistoryViewController *)segue.destinationViewController;
+            playingCardHistoryViewController.statusHistory = self.statusHistory;
+        }
+    }
 }
 
 

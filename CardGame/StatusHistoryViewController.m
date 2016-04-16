@@ -15,4 +15,21 @@
 
 @implementation StatusHistoryViewController
 
+-(void) viewDidLoad
+{
+    [super viewDidLoad];
+    [self updateStatusHistoryTextView];
+}
+
+-(void) updateStatusHistoryTextView
+{
+    NSMutableAttributedString *statusHistoryText = [[NSMutableAttributedString alloc] init];
+    for(NSMutableAttributedString *status in self.statusHistory)
+    {
+        [statusHistoryText appendAttributedString:status];
+        [statusHistoryText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
+        self.statusHistoryTextView.attributedText = statusHistoryText;
+    }
+}
+
 @end
